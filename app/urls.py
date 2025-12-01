@@ -9,10 +9,11 @@ from rest_framework.routers import DefaultRouter
 
 # Update the import path below if 'core' is not the correct app name or location
 from core.views import UserViewSet
+from fichas.views import FichaViewSet
 
 router = DefaultRouter()
 router.register(r'usuarios', UserViewSet, basename='usuarios')
-
+router.register(r'fichas', FichaViewSet, basename='fichas')
 urlpatterns = [
     path('admin/', admin.site.urls),
     # OpenAPI 3
@@ -29,5 +30,4 @@ urlpatterns = [
     ),
     # API
     path('api/', include(router.urls)),
-    path("api/", include("fichas.urls")),
 ]

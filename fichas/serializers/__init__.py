@@ -1,0 +1,1 @@
+from .ficha_serializer import FichaSerializer

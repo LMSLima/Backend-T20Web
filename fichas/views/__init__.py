@@ -1,0 +1,1 @@
+from .ficha_viewset import FichaViewSet
