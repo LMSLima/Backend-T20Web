@@ -1,3 +1,4 @@
+from posixpath import basename
 from django.contrib import admin
 from django.urls import include, path
 from drf_spectacular.views import (
@@ -7,9 +8,10 @@ from drf_spectacular.views import (
 )
 from rest_framework.routers import DefaultRouter
 
-# Update the import path below if 'core' is not the correct app name or location
 from core.views import UserViewSet
 from fichas.views import FichaViewSet
+
+from core.auth import LoginUser, RegisterUser
 
 router = DefaultRouter()
 router.register(r'usuarios', UserViewSet, basename='usuarios')
@@ -30,4 +32,9 @@ urlpatterns = [
     ),
     # API
     path('api/', include(router.urls)),
+    path("api/auth/register/", RegisterUser, name="register"),
+    path("api/auth/login/", LoginUser, name="login"),
+    path('api/auth/', include('core.urls')),
+    path("api/", include("core.urls")),
+    path("api/", include("fichas.urls")),
 ]

@@ -4,7 +4,6 @@ from rest_framework import serializers
 
 from ..models.fichas import Ficha
 
-# Exemplo simples de esquema JSON para import validation
 FICHA_SCHEMA = {
     "type": "object",
     "required": ["nome", "nivel", "atributos", "schema_version"],

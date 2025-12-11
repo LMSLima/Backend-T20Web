@@ -6,10 +6,10 @@ from django.utils import timezone
 class Ficha(models.Model):
     SCHEMA_VERSION = 1
 
-    nome = models.CharField(max_length=200)
+    nome = models.CharField(max_length=200, blank=True)
     raca = models.CharField(max_length=100, blank=True)
     classe = models.CharField(max_length=100, blank=True)
-    nivel = models.PositiveIntegerField(default=1, validators=[MinValueValidator(1)])
+    nivel = models.PositiveIntegerField(default=1, validators=[MinValueValidator(1)], blank=True)
     tendencia = models.CharField(max_length=50, blank=True)
     jogador = models.CharField(max_length=100, blank=True)
 
