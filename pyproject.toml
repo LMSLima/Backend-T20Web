@@ -6,7 +6,7 @@ authors = [{ name = "Marco André Mendes", email = "marcoandre@gmail.com" }]
 dependencies = [
   'dj-database-url>=2.1.0',
   "django-cloudinary-storage>=0.3.0",
-  'django-cors-headers>=4.3.0',
+  "django-cors-headers>=4.9.0",
   'django-extensions>=3.2.3',
   'django-filter>=23.3',
   "django>=5.1.3",
